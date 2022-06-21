@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Land registry</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app_index.js"></script>
+    
+
+
+  </head>
+  <body onload="myFunction()">
+
+  
+
+
+
+    <div class="field">
+      <label class="label">Date</label>
+      <div class="control has-icons-left has-icons-right">
+      <input class="input is-rounded"  name="textfield" type="text" id="demo">
+      <span class="icon is-small is-left">
+         
+          <i class="far fa-calendar-alt"></i>
+      </span>
+      </div>
+    </div>
+
+      <div class="field">
+      <label class="label">Form ID</label>
+      <div class="control has-icons-left has-icons-right">
+      <input class="input is-rounded" name="textfield" type="text" id="form">
+      <span class="icon is-small is-left">
+         <i class="fas fa-fingerprint"></i>
+      </span>
+      </div>
+    </div>
+
+
+
+<script>
+function myFunction() {
+document.getElementById('demo').value= Date();
+uniq=Math.floor(Math.random() * 100000) + 1;
+document.getElementById("form").value =uniq;
+
+}
+</script>
+
+
+    <p id="accountAddress" class="text-center"></p>
+    
+
+          <div class="section">
+            <div class="container">
+                
+                <div class="columns is-centered is-vcentered"s>
+                    
+                    <div class="column is-half">
+
+                        <div class="field has-text-centered">
+                            <h1 class="title is-4"><font color="red"><span class="icon is-small is-left">
+                                <i class="fas fa-dice-one"></i>
+                            </span>  BUYER</font></h1>
+
+                        </div>
+
+                       <form >
+                        <div class="field">
+                            <label class="label">First Name</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="b1" type="text" placeholder="Text Input">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            </div>
+                          </div>
+                        
+
+                          <div class = "field">
+                            <label class="label">Address</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <textarea class="textarea is-rounded" placeholder="       Address" id="b2"></textarea>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-address-book"></i>
+                            </span>
+
+                          </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">PinCode</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="b3" type="text" placeholder="Text Input">
+                            <span class="icon is-small is-left">
+                               <i class="fas fa-map-pin"></i>
+                            </span>
+                            </div>
+                          </div>
+
+                         <div class="field">
+                            <label class="label">Aadhar Number</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="b4" type="text" placeholder="Aadhar Number">
+                            <span class="icon is-small is-left">
+                               <i class="fas fa-id-card"></i>
+                            </span>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <label class="label">Ration ID</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="b5" type="text" placeholder="Ration Number">
+                            <span class="icon is-small is-left">
+                                 <i class="far fa-id-card"></i>
+                            </span>
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">Phone No.</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="b6" type="text" placeholder="Phone Number">
+                            <span class="icon is-small is-left">
+                               
+                                <i class="fas fa-phone"></i>
+                            </span>
+                            </div>
+                          </div>
+
+
+
+                      
+                          <br>
+
+                          <div class="field has-text-centered">
+                            <h1 class="title is-4"><font color="red"><span class="icon is-small is-left">
+                                <i class="fas fa-dice-two"></i>
+                            </span> SELLER</font></h1>
+                        </div><br>
+                          <div class="field">
+                            <label class="label">First Name</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="s1" type="text" placeholder="Text Input">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            </div>
+                          </div>
+                         
+
+                          <div class = "field">
+                            <label class="label">Address</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <textarea class="textarea is-rounded" placeholder="       Address" id="s2"></textarea>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-address-book"></i>
+                            </span>
+
+                          </div>
+                          </div>
+
+                           
+                          <div class="field">
+                            <label class="label">PinCode</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="s3" type="text" placeholder="Text Input">
+                            <span class="icon is-small is-left">
+                               <i class="fas fa-map-pin"></i>
+                            </span>
+                            </div>
+                          </div>
+
+                         <div class="field">
+                            <label class="label">Aadhar Number</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="s4" type="text" placeholder="Aadhar Number">
+                            <span class="icon is-small is-left">
+                              <i class="fas fa-id-card"></i>
+                            </span>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <label class="label">Ration ID</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="s5" type="text" placeholder="Ration Number">
+                            <span class="icon is-small is-left">
+                              <i class="far fa-id-card"></i>
+                            </span>
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">Phone No.</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="s6" type="text" placeholder="Phone Number">
+                            <span class="icon is-small is-left">
+                               
+                                <i class="fas fa-phone"></i>
+                            </span>
+                            </div>
+                          </div><br>
+
+
+
+                        
+
+                          <div class="field has-text-centered">
+                            <h1 class="title is-4"><font color="red"><span class="icon is-small is-left">
+                                <i class="fas fa-dice-three"></i>
+                            </span> LAND DETAILS</font></h1>
+                        </div><br>
+
+                          <div class="field">
+                            <label class="label">Date</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" type="date" id="l1">
+                            <span class="icon is-small is-left">
+                               
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
+                            </div>
+                          </div>
+
+
+                          <div class="field">
+                            <label class="label">Survey Field Number</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l2" type="text" placeholder="Number">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            </div>
+                          </div>
+                          
+                          <div class = "field">
+                            <label class="label">Address</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <textarea class="textarea is-rounded" placeholder="       Address" id="l3"></textarea>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-address-book"></i>
+                            </span>
+
+                          </div>
+                          </div>
+
+                           <div class="field">
+                            <label class="label">City</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l4" type="text" placeholder="Text Input">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-city"></i>
+                            </span>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <label class="label">PinCode</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l5" type="text" placeholder="Text Input">
+                            <span class="icon is-small is-left">
+                               <i class="fas fa-map-pin"></i>
+                            </span>
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">North Neighbour</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l6" type="text" placeholder="Text Input">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-arrow-alt-circle-up"></i>
+                            </span>
+                            </div>
+                          </div>
+                          
+                          <div class="field">
+                            <label class="label">South Neighbour</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l7" type="text" placeholder="Text Input">
+                            <span class="icon is-small is-left">
+                              <i class="fas fa-arrow-alt-circle-down"></i>
+                            </span>
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">East Neighbour</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l8" type="text" placeholder="Text Input">
+                            <span class="icon is-small is-left">
+                               <i class="fas fa-arrow-alt-circle-right"></i>
+                            </span>
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">West Neighbour</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l9" type="text" placeholder="Text Input">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-arrow-alt-circle-left"></i>
+                            </span>
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">North Measurement</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l10" type="Number" placeholder="N Area" step="0.01" min="0" max="10">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-directions"></i>
+                            </span>
+                            </div>
+                            </div>
+
+                             <div class="field">
+                            <label class="label">South Measurement</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l11" type="Number" placeholder="S Area" step="0.01" min="0" max="10">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-directions"></i>
+                            </span>
+                            </div>
+                            </div>
+
+                             <div class="field">
+                            <label class="label">East Measurement</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l12" type="Number" placeholder="E Area" step="0.01" min="0" max="10">
+                            <span class="icon is-small is-left">
+                               <i class="fas fa-directions"></i>
+                            </span>
+                            </div>
+                            </div>
+
+                             <div class="field">
+                            <label class="label">West Measurement</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l13" type="Number" placeholder="W Area" step="0.01" min="0" max="10">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-directions"></i>
+                            </span>
+                            </div>
+                            </div>
+
+                             <div class="field">
+                            <label class="label">Total Area</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l14" type="Number" placeholder=" Total Area Sq. Feet">
+                            
+                                
+                              <span class="icon is-small is-left">
+                                <i class="fas fa-home"></i>
+                            </span>
+                            </div>
+                            </div>
+
+                            <div class="field">
+                            <label class="label">Rate Per Sq. Meter</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l15" type="Number" placeholder=" Rate">
+                            
+                              <span class="icon is-small is-left">
+                               <i class="fas fa-file-invoice-dollar"></i>
+                            </span>
+                            </div>
+                            </div>
+
+                            <div class="field">
+                            <label class="label">Total Cost in word</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l16" type="Text" placeholder="Text">
+                            
+                              <span class="icon is-small is-left">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </span>
+                            </div>
+                            </div>
+
+                            <div class="field">
+                            <label class="label">Total Cost</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded"  name="textfield" id="l17" type="Number" placeholder="Total Cost">
+                            
+                              <span class="icon is-small is-left">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </span>
+                            </div>
+                            </div><br><br>
+
+                            <input class="button is-success , button is-rounded"  type="button" value="Submit input" onclick="submits()"> 
+                             
+                            <input class="button is-danger , button is-rounded" type="reset" value="Reset input">
+                            <input class="button is-info is-light , button is-rounded"   value="view" onclick="viewfunc()">
+
+                       </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+<script>
+function viewfunc() {
+  location.replace("admin.html"); 
+}
+</script>
+   
+
+  </body>
+</html>
+

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 100%;
+min-height: 100%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  padding: 20px;
+  height: 100%;
+  width:100%;
+}
+.centers {
+  background-color: #ccc;
+  height: 180px;
+  width: 90%;
+  position: left;
+  padding: 10px;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.title{
+    background-color:#ffa500;
+    width: 100%;
+    padding: 15px;
+
+}
+</style>
+
+    <title>Land registry</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+ 	<script src="js/app_index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+
+  </head>
+  <body>
+    <div class="title">
+        <h1 style="color:#ffffff;">Land Registry Details</h1>
+        </br>
+    </div>
+    <table>
+        <tr>
+            <td>
+                <div class="centers">
+                    <h2 style="color: #ffffff">View Registered Data</h2>
+                    <input type="text" class="button" name="id" id="landid"></input>
+                    <input type="button" name="test" class="button" onclick="views()" value="View entry">
+            		</br>
+            		</br>
+                    <input type="button" name="test" class="button" onclick="App.uploads(); return false;" value="Upload to Contract">
+                </div>
+            </td>
+                
+            <td>
+                <div class="centers">
+                    <h2 style="color: #ffffff">View Uploaded Data from Blockchain</h2>
+                    <input type="text" class="button" name="id" id="landidblk"></input>
+                    <input type="button" name="test" class="button" onclick="App.viewblk()" value="View entry">
+                    </br>
+                    </br>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+    <br>
+    <br>
+     <div class="row" id="blkdata"> 
+      <div class="column" style="background-color:#ffffff;">
+        <p><h2 style="font-style: bold; ">Buyer</h2></p>
+    
+        <div >
+            <table>
+                <tbody id="buyerrow">
+              </tbody>
+            </table>
+        </div>
+      </div>
+      <div class="column" style="background-color:#ffffff;">
+        <p><h3>Seller</h3></p>
+        
+        <div>
+            <table>
+                <tbody id="sellerrow">
+              </tbody>
+            </table>
+        </div>
+      </div>
+      <div class="column" style="background-color:#ffffff;">
+        <p><h3>Land Details</h3></p>
+        <div>
+            <table>
+                <tbody id="landrow">
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="nrmldata">
+      <div class="column" style="background-color:#ffffff;">
+        <p><h2 style="font-style: bold; ">Buyer</h2></p>
+        <div id="Buyer">
+            <p id="admin_b1">
+            </p>
+            </br>
+            <p id="admin_b2">
+            </p> 
+            </br>       
+            <p id="admin_b3">
+            </p>
+            </br>
+            <p id="admin_b4">
+            </p>
+            </br>
+            <p id="admin_b5">
+            </p>
+            </br>
+            <p id="admin_b6">
+            </p>
+            </br>
+        </div>
+      </div>
+      <div class="column" style="background-color:#ffffff;">
+        <p><h3>Seller</h3></p>
+        <div id="Seller">
+
+            <p id="admin_s1">
+            </p>
+            </br>
+            <p id="admin_s2">
+            </p> 
+            </br>       
+            <p id="admin_s3">
+            </p>
+            </br>
+            <p id="admin_s4">
+            </p>
+            </br>
+            <p id="admin_s5">
+            </p>
+            </br>
+            <p id="admin_s6">
+            </p>
+            </br>
+        </div>
+      </div>
+      <div class="column" style="background-color:#ffffff;">
+        <p><h3>Land Details</h3></p>
+        <div id="LandDetails">
+            <p id="admin_l1">
+            </p>
+            </br>
+            <p id="admin_l2">
+            </p> 
+            </br>       
+            <p id="admin_l3">
+            </p>
+            </br>
+            <p id="admin_l4">
+            </p>
+            </br>
+            <p id="admin_l5">
+            </p>
+            </br>
+            <p id="admin_l6">
+            </p>
+            </br>
+            <p id="admin_l7">
+            </p>
+            </br>
+            <p id="admin_l8">
+            </p> 
+            </br>       
+            <p id="admin_l9">
+            </p>
+            </br>
+            <p id="admin_l10">
+            </p>
+            </br>
+            <p id="admin_l11">
+            </p>
+            </br>
+            <p id="admin_l12">
+            </p>
+            </br>
+            <p id="admin_l13">
+            </p>
+            </br>
+            <p id="admin_l14">
+            </p> 
+            </br>       
+            <p id="admin_l15">
+            </p>
+            </br>
+            <p id="admin_l16">
+            </p>
+            </br>
+            <p id="admin_l17">
+            </p>
+            </br>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+
+  
+  </body>
+</html>
